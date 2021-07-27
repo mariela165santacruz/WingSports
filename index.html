@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WingSports</title>
+    <!--Favicon-->
+    <link rel="icon" type="image/jpeg" href="iconos/icon.png">
+    <!--Box icons-->
+    <link 
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!--Link style-->
+    <link rel="stylesheet" href="estilos/styles.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+ 
+    
+</head>
+
+<body>
+    <!--Header-->
+    <header id="home" class="header">
+        <!-- Navigation -->
+        <nav class="nav">
+          <div class="navigation container">
+            <div class="logo">
+              <h1>WingSports</h1>
+            </div>
+    
+            <div class="menu">
+              <div class="top-nav">
+                <div class="logo">
+                  <h1>WingSports</h1>
+                </div>
+                <div class="close">
+                  <i class="bx bx-x"></i>
+                </div>
+              </div>
+    
+        <ul class="nav nav-pills mb-3 py-3 container"id="pills-tab" role="tablist">
+              <li class="nav-item text-primary" role="presentation">
+              <a class="nav-link " id="pills-home-tab" data-bs-toggle="pill"
+              data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+              aria-selected="true" >Inicio</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill"
+              data-bs-target="#pills-profile" type="button" role="tab"
+              aria-controls="pills-profile" aria-selected="false" >Productos</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-contact-tab"  data-bs-toggle="pill" data-bs-target="#pills-contact"
+              type="button" role="tab" aria-controls="pills-contact"
+              aria-selected="false" >Carrito</a>
+          </li>
+        </ul>
+            </div>
+    
+            <a href="cart.html" class="cart-icon">
+              <i class="bx bx-shopping-bag"></i>
+            </a>
+    
+            <div class="hamburger">
+              <i class="bx bx-menu"></i>
+            </div>
+          </div>
+        </nav>
+    
+        <!-- Hero -->
+        <img src="./img/productos/nike.png" alt="" class="hero-img" />
+    
+        <div class="hero-content">
+          <h2><span class="discount">70% </span> SALE OFF</h2>
+          <h1>
+            <span>Aprovecha</span>
+            <span>esta oferta</span>
+          </h1>
+          <a class="btn btn-danger button" href="#">COMPRA AHORA</a>
+        </div>
+      </header>
+
+        
+
+    <!-- Productos-->
+    <header class="container-fluid bg-dark position-sticky top-0">
+        
+      </header>
+  
+      <div class="alert container position-sticky top-0 alert-primary hide" role="alert">
+      Producto Añadido al carrito!
+      </div>
+      <div class="alert container position-sticky top-0 alert-danger remove" role="alert">
+        Producto removido!
+      </div>
+  
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"> 1</div>
+        <div class="tab-pane fade show active container" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+          <h2 class="h1 m-4  text-primary ">Productos</h2>
+  
+        <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+  
+            <div class="col d-flex justify-content-center mb-4">
+              <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                <h5 class="card-title pt-2 text-center text-primary">Zapatillas Jordan</h5>
+                <img src="./img/productos/Air Jordan 1 Mid Shoe-salmon.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text text-white-50 description">Air Jordan 1 Mid Shoe color salmon</p>
+                  <h5 class="text-primary">Precio: <span class="precio">$ 20000</span></h5>
+                  <div class="d-grid gap-2">
+                  <button  class="btn btn-primary button">Añadir a Carrito</button>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col d-flex justify-content-center mb-4">
+              <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                <h5 class="card-title pt-2 text-center text-primary">Zapatillas Jordan</h5>
+                <img src="./img/productos/Air Jordan 1 Mid Shoe-turquesa.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text text-white-50 description">Air Jordan 1 Mid Shoe color turquesa</p>
+                  <h5 class="text-primary">Precio: <span class="precio">$ 20000</span></h5>
+                  <div class="d-grid gap-2">
+                  <button  class="btn btn-primary button">Añadir a Carrito</button>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col d-flex justify-content-center mb-4">
+              <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                <h5 class="card-title pt-2 text-center text-primary">Zapatillas Jordan</h5>
+                <img src="./img/productos/Air Jordan 1 Mid Shoe-amarillo.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text text-white-50 description">Air Jordan 1 Mid Shoe color amarillo</p>
+                  <h5 class="text-primary">Precio: <span class="precio">$ 20000</span></h5>
+                  <div class="d-grid gap-2">
+                  <button  class="btn btn-primary button">Añadir a Carrito</button>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col d-flex justify-content-center mb-4">
+              <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                <h5 class="card-title pt-2 text-center text-primary">Zapatillas Jordan</h5>
+                <img src="./img/productos/Air Jordan 1 Mid Shoe-celeste.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text text-white-50 description">Air Jordan 1 Mid Shoe color celeste</p>
+                  <h5 class="text-primary">Precio: <span class="precio">$ 20000</span></h5>
+                  <div class="d-grid gap-2">
+                  <button  class="btn btn-primary button">Añadir a Carrito</button>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col d-flex justify-content-center mb-4">
+              <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                <h5 class="card-title pt-2 text-center text-primary">Zapatillas Jordan</h5>
+                <img src="./img/productos/Air Jordan 1 Mid Shoe-Multicolor.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text text-white-50 description">Air Jordan 1 Mid Shoe color multicolor</p>
+                  <h5 class="text-primary">Precio: <span class="precio">$ 20000</span></h5>
+                  <div class="d-grid gap-2">
+                  <button  class="btn btn-primary button">Añadir a Carrito</button>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col d-flex justify-content-center mb-4">
+              <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                <h5 class="card-title pt-2 text-center text-primary">Zapatillas Jordan</h5>
+                <img src="./img/productos/Air Jordan 1 Mid Shoe-azul y blanco.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text text-white-50 description">Air Jordan 1 Mid Shoe color azul y blanco</p>
+                  <h5 class="text-primary">Precio: <span class="precio">$ 20000</span></h5>
+                  <div class="d-grid gap-2">
+                  <button  class="btn btn-primary button">Añadir a Carrito</button>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col d-flex justify-content-center mb-4">
+              <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                <h5 class="card-title pt-2 text-center text-primary">Zapatillas Jordan</h5>
+                <img src="./img/productos/Air Jordan 1 Mid Shoe-rojo y negro.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text text-white-50 description">Air Jordan 1 Mid Shoe color rojo y negro</p>
+                  <h5 class="text-primary">Precio: <span class="precio">$ 20000</span></h5>
+                  <div class="d-grid gap-2">
+                  <button  class="btn btn-primary button">Añadir a Carrito</button>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col d-flex justify-content-center mb-4">
+              <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                <h5 class="card-title pt-2 text-center text-primary">Zapatillas Jordan</h5>
+                <img src="./img/productos/Air Jordan 1 Mid Shoe-rojo.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text text-white-50 description">Air Jordan 1 Mid Shoe color rojo</p>
+                  <h5 class="text-primary">Precio: <span class="precio">$ 20000</span></h5>
+                  <div class="d-grid gap-2">
+                  <button  class="btn btn-primary button">Añadir a Carrito</button>
+                </div>
+                </div>
+              </div>
+            </div>
+  
+  
+          </div>
+  
+        </div>
+        <div
+          class="tab-pane fade carrito"
+          id="pills-contact"
+          role="tabpanel"
+          aria-labelledby="pills-contact-tab"
+        >
+        <br>
+        <table class="table table-dark table-hover">
+          <thead>
+            <tr class="text-primary">
+              <th scope="col">#</th>
+              <th scope="col">Productos</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Cantidad</th>
+            </tr>
+          </thead>
+          <tbody class="tbody">
+            
+          
+            
+          </tbody>
+        </table>
+        <br><br>
+        <div class="row mx-4">
+          <div class="col">
+            <h3 class="itemCartTotal text-white">Total: 0</h3>
+          </div>
+          <div class="col d-flex justify-content-end">
+            <button class="btn btn-success">COMPRAR</button>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+  
+      <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"
+      ></script>
+      <!-- JavaScript Bundle with Popper -->
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"
+      ></script>
+
+    
+    <!-- Product Banner -->
+    <section class="section">
+      <div class="product-banner">
+        <div class="left">
+          <img src="./img/productos/nike-banner2.png" alt="" />
+        </div>
+        <div class="right">
+          <div class="content">
+            <h2><span class="discount">ENVIO</span> GRATIS</h2>
+            <h1>
+              <span>Aprovecha</span>
+              <span>esta oportunidad</span>
+            </h1>
+            <a class="btn btn-danger button" href="#">COMPRA AHORA</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+      <div class="testimonial-center container">
+        <div class="testimonial">
+          <span>&ldquo;</span>
+          <p>
+            "Son las mejores zapatillas que alguna vez use, cómodas y a la moda, son útiles para ir al supermercado y también para jugar al basketball"
+          </p>
+          <div class="rating">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bx-star"></i>
+          </div>
+          <div class="img-cover">
+            <img src="./img/reseñas/reseña1.jpg" alt="" />
+          </div>
+          <h4>Lena Días</h4>
+        </div>
+        <div class="testimonial">
+          <span>&ldquo;</span>
+          <p>
+            "Crear las Air Balvin fue una hermosa experiencia, estas zapatillas son tendencia gracias a su estilo y versatilidad"
+          </p>
+          <div class="rating">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bx-star"></i>
+          </div>
+          <div class="img-cover">
+            <img src="./img/reseñas/reseña2.jpg" alt="" />
+          </div>
+          <h4>J Balvin</h4>
+        </div>
+        <div class="testimonial">
+          <span>&ldquo;</span>
+          <p>
+            "De mi buena relación con Jordan han surgido una serie de modelos inspirados en mi personaje en la serie 'El Príncipe de Bel-Air', son zapatillas que siempre quedan bien"
+          </p>
+          <div class="rating">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bx-star"></i>
+          </div>
+          <div class="img-cover">
+            <img src="./img/reseñas/reseña3.jpg" alt="" />
+          </div>
+          <h4>Will Smith</h4>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- Footer -->
+  <footer id="footer" class="section footer">
+    <p>Seguinos</p>
+  <ul>
+      <li><a href="https://www.facebook.com/jumpman23" class="facebook"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAADcElEQVRYR61YS1ZTQRCtak+EmbgC2YEZ6gvnwA7U2QsOTEYSR+6AsAkeOgkTDUNcgRkEHCo7CDtgiueY9vTr7nRVf9JNNBMeoT+3btW9VQ8E9UEAkO0TfzZfPewHAoJcHef20ktSJ6q90U/JZhpAOqL8SXxFCCh/QiSEyKb2Kw40zhw/jgD6r3nj+Q/AFabMQnrZ//QaJTxn2wISVNHZeMzzA9hFhEVn+/G32WR451PB7q3qZoAoJsVVTnEZVaiSThQnY24J+ObH9P0lBRDs2ztsxlLicUBqe/EDKAgOCEsCUZ7Mv47GISCydj0gfktADv2zCSBgi2yygGiJkZg1qiSgSB0GgPgXNwDyl0BY/JG4A7DsAoguAjyxR2lAH8auPGxVGobUj14qZeXueINSfpxfjGbqeCr1qt/MEHCfA6IpixjjZimzOZe3na3t7ux8eBfiR+j1TxVID1CMIbK7PGU6dip8kHJ4fTE6T7WLFENrZa8BiWOa19Jsdba2nip27AUv6mZXgHhHUjQAgN3V70KezL9sqrKIjH0FXU2PmI306rNLQHjVdlrUIeoFGnJa9mRRecp895BgAVkZV7WqGbGfMkkGiAiLxW4B+dGUpE0DchWhakYVcREg6+FuO/ehjMdEjfzaS1nVP50hiJWq/GLPpEzHlvOhFqjtpRHr50h5q+n1mwVIfGaliaao16vsbTOWy0gvi+QsFqEr2XBD1T9rJ6RiY2wZagFlZF/MkLu8OvzcRbn8yaQQkz1tbGpxqLJ0h48zFF+/VzcHEvF7FhBRfPsYqqxEX3qN70MrZ47MTK0PJRkidzKnDgzNmFti7kgCiphqHJBtrsE8JI7zUx8HpzBeXxzharBHgKo2PpQIgDGUM8byROmVDhApZG/c8M/UgNbMQ66GNmuuYcqMMaYYSo6wqRpaS1OopvIa0oyKGKC87COoEgN/rJe5CdEEkJqpzTWs7zljLHPqVfGYU67aoi6roSRDfvxF48e/yD7CEDNL3xj1iyJO/Oj1ppB2MnUZY3T6zc1D0RdFvzQPBpOd+/vfB49QvbaEH78zkwzBfDoas5TVpwMh0I2s5P8PyyUs+PztQi6znHRLK9tv2SUGSIOxh5Cizty4jhoGib6L8TODG6jEU05dGO7my1IMGXBM9n61a0o3zFWcjmwgfwEArAVJRgSURwAAAABJRU5ErkJggg=="/></a></li>
+      <li><a href="https://www.instagram.com/airjordanarg/" class="instagram"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAEr0lEQVRYR81Yz28bRRT+3tpcOEB64Nz0L6irZBOEIOtFRUjlgCNuiEP6F2BuVN4QU9v8ONURf0BzQJwQTcShgFT8AwlK1qjmzsG5capciUvleB6a3Y09szO763BiL/buvpn53nvf++bNEla9CAAXGBs2qwzS55Qj/lcX5fqgvoz+Gw8WzhivDTeTsfqP1So7QskqBF5kawkpyxXLcwuIvNErpazndiol5qsMqmQOsASQwOM50ZkfBuNcEiqg9bCnVhtututMOACwZtKviOXqCJoCoumF+4dANlFMUie2vUpzrfRC+QEDVXtE4kTmV4VpQ0B/Ppvv+uODqW1ek9QJoIHb6gPkpQfJmGR6YXlps5egdsLAtwKy0Xy40akL4nvawnYklxUmhR50e2fUOEprmzXiw632hBlXV2J7ISS6DRJTZtRTEZ94YXAtPdwAJKvJAT+JApIbFZ2Yhql84ODEOw1qctHhVqvGTA9UAAJ0ww8bY436y5t4gZ7bqjqgXjEgPAPoSLA49kf7/d6rn6+X+LzCwqkCvAfgZQBjLwxuRIDiar2nAWL25dgMQPHjwVarCXYOlpphKVEHJ+L5+Z4/blorRYKj+fyYgOsAJgRMFtWqhpL4U+90v6kBSkt+DIik7iyu5Rwk83jihUHtgozDrc47gsW2A2LB9Lg6Ch5eONN32+MEVDSXkVYVkCaMyk3fiJBGu2didr7u/9mcDiufvYKy+IaBm3rI6cdyefb+a781n0o+EvhJZrXaIqRySMpYf7vVhNAjpNgcVsNGXXo6cNs/AXjLLLJIDB9Ww+BWRAG30wX4w7wIpXccTcnzOCQSEg63O2+z4B/SBRHfx+rsgG7uhI1Hv7idPcF8f6GmRRxKe2jj0IWNmJ1fkUQeuO0AQKtAgu54YfDFhYxYbYtSJmmXD2h+Re5BA7fVAKidC4j4Y+90/8tLA0rnLya1nUOChe+PPukPtltvQtAjrfrM/tbzwmA4dDt7DL5/uQgpqAYWUisLH3phox7rVecYzO/ao0TfeaPGe7LD7LvtLiWkNmo/P2WJMEaAVGFMloxQ0VTMZtckj77faL74klP+GsCuWkFE9O0/T//+4NZfXz23pusypJaBisteB5QStMV2IO1/3mi/TiVsSWFk5t+9MPg1KTb0N3VhNKJZFKEIUA6HFOkei3Jp1398Z2JLWRIZyRut3V1dqZVZe5utqkPUMxYyd/4pA0eO7ABBZ9LeIb4OjkDU430iu6uUrxns+2HB5ppbprb9yMyDdqLM62Cs7Yet3dYbNN3LyzWOltmTCRzC2RunwXran4yO8W6N2dGaKdueVXy2zpZOYny0Mwq66RNI5sm177b6ZDT5iccFneTyNJLVVfLAC/etp5mMUwyhVzlYc8qlY5B68igAlBBZjZyJnQdiNq9FzZ0lo0XHKgzduzXA6cZNf0EfrWpoKltEOINAd+ePoJv3FSUfkCoHbqcCnq85Di1CrXqflUUCxnPhTPyR3syreM1+KJFW9aNCQWvxH15T3CnZylqZLfMQmrFpKhqT9st2zi9Y3bJIDGjlcSsbZizFi7WWMyWRS0bkf7DKSvTF4PQ3rCzVXsWPxOZfuX9JQzZdeeYAAAAASUVORK5CYII="/></a></li>
+      <li><a href="https://twitter.com/Jumpman23" class="twitter"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAADgUlEQVRYR61XW1YaQRC9NeRfRhcQdhBdQcYVqAH8FVYgWUFwBdEd4GcEA1lBWIKsIGQBMPidZCqnm8d0Tz/hOB/qGburb9+6dauGCADLH8DmF8Sj/i1fHPio8dXAxvtNfPFe+ZMDxwZgWi6mxiewuHflwnrMNSDjnP35cd3YRbcvM0GO7PBUOva4gFcXJLl588cFLyYRb6QhV1WY+ohRaZCh6ISIhd/yUyTFLUANABkBL8w8xbvkAVfpfCfp8bKOP2jgOn3RhV8V9fe8AeYMzeNBEGlVfc95D8xf7fsIROhygTlQXBBRh2t0VoIsq0/fvw1K1EUz9YCq8DbKL0E83tW1BZW2g+gzmul9dZkmarlhuJyC8HGDt4uWYCqQ+XFexz/+BUK9utSebh6AMAfTGWrUwVW6Ut1Q96HRcgLgQvGPCWrUXW9yqEmwAx5XLS+Q8lcUlOkagkhr2TpkALsOViDqoZk+qgLcMTdc9EH0xQQgfIV3rUm55AwFdapgtnLW4wzzDMQ/rQcDK4AnKJIHLdhocQ/QrUq7luSqKzDfUfukbwrBZYyjxYBAN2bf2RxZZk6U7Db/mT9FSro1QevWbTr1c36JBFP85Ukp7ngDqLqIkqZSYgWdo51ObZqzAFpOwHQBsLh5PRZKtHmKgEzn1E6nrrTqZz4t+khsArXePRavHCl240fr2GxZis70oOO8IT1l9wTu7v23pccBP9A6vnTdxN5ct2VsjApvAU5xaMso4h4/nvMOmPsA3qu3CY8QXtCvqFFDdeZw69iuEH4EHIEkqNMosYSUzXyH9omI53ycDNEwz1ga5B4zjQWQ8mrNzqd0ZW2NmqhdgUaLAUA3YXaUCnKqVZ0e1PXmhf31pHd/83vJcD5rC7ZXloMIf0LF95pIH4oMRKJcP4QYq5wzQ40yn5CrRWM0KOuBaysQDTTavQHEg3Eao5qCJzEfC0ZkpYkZ2Xys3if7wyNqSa9kxmI6tnAavbLUuQ/CEQGntl5jT5cW5Tcxdfg6nVqnxwhvtbSOogdQR/pQ/Ff+DKABWum9y+DtWPTVbqcWMCVjRQbQetbZzdqYgbEC8RyUvCDBpPr1sL5lyCkVLkwf8rvaAbG9kFxQ/QyF6tvvYNG7HWVffV0OsMag7lrqLkIjfa6ai2LIq4Q9ZFLitcDx+5CLbXcPOlDDxjaFof1FfRA5AWX9B5X1fTmMvJNeAAAAAElFTkSuQmCC"/></a></li>
+  </ul>
+</footer>
+  <div class="footer">
+    <section id="postfooter">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-11">
+            <div class="row text-center align-items-center">
+              <div class="col-md-4">
+                <p><img src="https://rgturismo.com/wp-content/themes/av-theme/img/mail.png" alt="" width="30"></p>
+                <p>info@wingsports.com</p>
+              </div>
+              <div class="col-md-4">
+                <p><img src="https://rgturismo.com/wp-content/themes/av-theme/img/dir.png" alt="" width="30"></p>
+                <p>Av. Cabildo 2872, Belgrano, CABA</p>
+              </div>
+              <div class="col-md-4">
+                <p><img src="https://rgturismo.com/wp-content/themes/av-theme/img/tel.png" alt="" width="30"></p>
+                <p>+54 9 11 3986 6849</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-11">
+            <p class="text-center small firma"><br><br>Copyright © 2021 - Mariela Raquel Santa Cruz Alarcón</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+  <!-- End Footer -->
+    <!--GSAP-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <!--Link Script-->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
