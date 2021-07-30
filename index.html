@@ -21,9 +21,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
-    />
- 
+      crossorigin="anonymous"/>
     
 </head>
 
@@ -36,7 +34,6 @@
             <div class="logo">
               <h1>WingSports</h1>
             </div>
-    
             <div class="menu">
               <div class="top-nav">
                 <div class="logo">
@@ -46,39 +43,31 @@
                   <i class="bx bx-x"></i>
                 </div>
               </div>
-    
-        <ul class="nav nav-pills mb-3 py-3 container"id="pills-tab" role="tablist">
-              <li class="nav-item text-primary" role="presentation">
-              <a class="nav-link " id="pills-home-tab" data-bs-toggle="pill"
-              data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-              aria-selected="true" >Inicio</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill"
-              data-bs-target="#pills-profile" type="button" role="tab"
-              aria-controls="pills-profile" aria-selected="false" >Productos</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="nav-link" id="pills-contact-tab"  data-bs-toggle="pill" data-bs-target="#pills-contact"
-              type="button" role="tab" aria-controls="pills-contact"
-              aria-selected="false" >Carrito</a>
-          </li>
-        </ul>
+          <ul class="nav nav-pills mb-3 py-3 container"id="pills-tab" role="tablist">
+                <li class="nav-item text-primary" role="presentation">
+                <a class="nav-link " id="pills-home-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                aria-selected="true" >Inicio</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-profile" type="button" role="tab"
+                aria-controls="pills-profile" aria-selected="false" >Productos</a>
+            </li> 
+          </ul>
+              </div>
+              <a href="cart.html" class="cart-icon">
+                <i class="bx bx-shopping-bag"></i>
+              </a>
+              <div class="hamburger">
+                <i class="bx bx-menu"></i>
+              </div>
             </div>
-    
-            <a href="cart.html" class="cart-icon">
-              <i class="bx bx-shopping-bag"></i>
-            </a>
-    
-            <div class="hamburger">
-              <i class="bx bx-menu"></i>
-            </div>
-          </div>
         </nav>
     
+
         <!-- Hero -->
         <img src="./img/productos/nike.png" alt="" class="hero-img" />
-    
         <div class="hero-content">
           <h2><span class="discount">70% </span> SALE OFF</h2>
           <h1>
@@ -89,184 +78,36 @@
         </div>
       </header>
 
-        
-
+      
     <!-- Productos-->
-    <header class="container-fluid bg-dark position-sticky top-0">
-        
-      </header>
-  
-      <div class="alert container position-sticky top-0 alert-primary hide" role="alert">
-      Producto Añadido al carrito!
-      </div>
-      <div class="alert container position-sticky top-0 alert-danger remove" role="alert">
-        Producto removido!
-      </div>
-  
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"> 1</div>
-        <div class="tab-pane fade show active container" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-          <h2 class="h1 m-4  text-primary ">Productos</h2>
-  
-        <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
-  
-            <div class="col d-flex justify-content-center mb-4">
-              <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
-                <h5 class="card-title pt-2 text-center text-primary">Zapatillas Jordan</h5>
-                <img src="./img/productos/Air Jordan 1 Mid Shoe-salmon.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text text-white-50 description">Air Jordan 1 Mid Shoe color salmon</p>
-                  <h5 class="text-primary">Precio: <span class="precio">$ 20000</span></h5>
-                  <div class="d-grid gap-2">
-                  <button  class="btn btn-primary button">Añadir a Carrito</button>
-                </div>
-                </div>
-              </div>
+        <div class="tab-pane fade show active container" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">  <br><br>
+          <h2 class="h1 m-8  text-primary ">Productos</h2>  <br><br>
+          <div class="container">
+            <div class="row">
+                <!-- Elementos generados a partir del JSON -->
+                <main id="items" class="col-sm-7 row"></main>
+                <!-- Carrito -->
+                <aside class="col-sm-5">
+                    <h2>Carrito</h2>
+                    <!-- Elementos del carrito -->
+                    <ul id="carrito" class="h3 list-group"></ul>
+                    <hr>
+                    <!-- Precio total -->
+                    <p class="text-right">Total: <span id="total"></span>$;</p>
+                    <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                </aside>
             </div>
-            <div class="col d-flex justify-content-center mb-4">
-              <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
-                <h5 class="card-title pt-2 text-center text-primary">Zapatillas Jordan</h5>
-                <img src="./img/productos/Air Jordan 1 Mid Shoe-turquesa.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text text-white-50 description">Air Jordan 1 Mid Shoe color turquesa</p>
-                  <h5 class="text-primary">Precio: <span class="precio">$ 20000</span></h5>
-                  <div class="d-grid gap-2">
-                  <button  class="btn btn-primary button">Añadir a Carrito</button>
-                </div>
-                </div>
-              </div>
-            </div>
-            <div class="col d-flex justify-content-center mb-4">
-              <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
-                <h5 class="card-title pt-2 text-center text-primary">Zapatillas Jordan</h5>
-                <img src="./img/productos/Air Jordan 1 Mid Shoe-amarillo.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text text-white-50 description">Air Jordan 1 Mid Shoe color amarillo</p>
-                  <h5 class="text-primary">Precio: <span class="precio">$ 20000</span></h5>
-                  <div class="d-grid gap-2">
-                  <button  class="btn btn-primary button">Añadir a Carrito</button>
-                </div>
-                </div>
-              </div>
-            </div>
-            <div class="col d-flex justify-content-center mb-4">
-              <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
-                <h5 class="card-title pt-2 text-center text-primary">Zapatillas Jordan</h5>
-                <img src="./img/productos/Air Jordan 1 Mid Shoe-celeste.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text text-white-50 description">Air Jordan 1 Mid Shoe color celeste</p>
-                  <h5 class="text-primary">Precio: <span class="precio">$ 20000</span></h5>
-                  <div class="d-grid gap-2">
-                  <button  class="btn btn-primary button">Añadir a Carrito</button>
-                </div>
-                </div>
-              </div>
-            </div>
-            <div class="col d-flex justify-content-center mb-4">
-              <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
-                <h5 class="card-title pt-2 text-center text-primary">Zapatillas Jordan</h5>
-                <img src="./img/productos/Air Jordan 1 Mid Shoe-Multicolor.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text text-white-50 description">Air Jordan 1 Mid Shoe color multicolor</p>
-                  <h5 class="text-primary">Precio: <span class="precio">$ 20000</span></h5>
-                  <div class="d-grid gap-2">
-                  <button  class="btn btn-primary button">Añadir a Carrito</button>
-                </div>
-                </div>
-              </div>
-            </div>
-            <div class="col d-flex justify-content-center mb-4">
-              <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
-                <h5 class="card-title pt-2 text-center text-primary">Zapatillas Jordan</h5>
-                <img src="./img/productos/Air Jordan 1 Mid Shoe-azul y blanco.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text text-white-50 description">Air Jordan 1 Mid Shoe color azul y blanco</p>
-                  <h5 class="text-primary">Precio: <span class="precio">$ 20000</span></h5>
-                  <div class="d-grid gap-2">
-                  <button  class="btn btn-primary button">Añadir a Carrito</button>
-                </div>
-                </div>
-              </div>
-            </div>
-            <div class="col d-flex justify-content-center mb-4">
-              <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
-                <h5 class="card-title pt-2 text-center text-primary">Zapatillas Jordan</h5>
-                <img src="./img/productos/Air Jordan 1 Mid Shoe-rojo y negro.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text text-white-50 description">Air Jordan 1 Mid Shoe color rojo y negro</p>
-                  <h5 class="text-primary">Precio: <span class="precio">$ 20000</span></h5>
-                  <div class="d-grid gap-2">
-                  <button  class="btn btn-primary button">Añadir a Carrito</button>
-                </div>
-                </div>
-              </div>
-            </div>
-            <div class="col d-flex justify-content-center mb-4">
-              <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
-                <h5 class="card-title pt-2 text-center text-primary">Zapatillas Jordan</h5>
-                <img src="./img/productos/Air Jordan 1 Mid Shoe-rojo.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text text-white-50 description">Air Jordan 1 Mid Shoe color rojo</p>
-                  <h5 class="text-primary">Precio: <span class="precio">$ 20000</span></h5>
-                  <div class="d-grid gap-2">
-                  <button  class="btn btn-primary button">Añadir a Carrito</button>
-                </div>
-                </div>
-              </div>
-            </div>
-  
-  
-          </div>
-  
         </div>
-        <div
-          class="tab-pane fade carrito"
-          id="pills-contact"
-          role="tabpanel"
-          aria-labelledby="pills-contact-tab"
-        >
-        <br>
-        <table class="table table-dark table-hover">
-          <thead>
-            <tr class="text-primary">
-              <th scope="col">#</th>
-              <th scope="col">Productos</th>
-              <th scope="col">Precio</th>
-              <th scope="col">Cantidad</th>
-            </tr>
-          </thead>
-          <tbody class="tbody">
-            
-          
-            
-          </tbody>
-        </table>
+              </div>
+            </div>
+          </div>
+        </div>
         <br><br>
-        <div class="row mx-4">
-          <div class="col">
-            <h3 class="itemCartTotal text-white">Total: 0</h3>
-          </div>
-          <div class="col d-flex justify-content-end">
-            <button class="btn btn-success">COMPRAR</button>
-          </div>
-        </div>
-        
-        </div>
       </div>
   
-      <script
-        src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-        crossorigin="anonymous"
-      ></script>
-      <!-- JavaScript Bundle with Popper -->
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"
-      ></script>
-
-    
+      
     <!-- Product Banner -->
     <section class="section">
       <div class="product-banner">
@@ -344,6 +185,26 @@
     </section>
 
 
+    <!--FORM DE CONTACTO-->
+    <div id="formulario" class="contact">
+      <h2 class="h1 m-8  text-primary ">Consultas</h2>  <br><br>
+      <form method="post" id="formdata">
+          <label for="nombre">Nombre : </label><input type="text" name="nombre" id="nombre" required="required"></br></br></br>
+          <label for="direccion">Email : </label><input type="text" name="direccion" id="direccion" required="required"></br></br></br>
+          <label for="consulta">Consulta : </label><input type="text" name="consulta" id="consulta" required="required"></br></br></br>
+          <label for="mayor">Es mayor de 18 años : </label><input type="checkbox" name="mayor" id="mayor" required="required"></br>
+          <button id="botonenviar" type="button" value="Enviar" class="btn btn-primary">Enviar </button></br></br>
+      </form>
+  </div>
+  <div id="exito" style="display:none">
+      Sus datos han sido recibidos con éxito.
+  </div>
+  <div id="fracaso" style="display:none">
+      Se ha producido un error durante el envío de datos.
+  </div>
+</div>
+
+
   <!-- Footer -->
   <footer id="footer" class="section footer">
     <p>Seguinos</p>
@@ -385,6 +246,18 @@
 </div>
 
   <!-- End Footer -->
+  <!-- Popper -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+  crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!--GSAP-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <!--Link Script-->

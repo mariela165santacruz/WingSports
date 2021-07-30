@@ -1,166 +1,252 @@
-const Clickbutton = document.querySelectorAll('.button')
-const tbody = document.querySelector('.tbody')
-let carrito = []
+window.onload = function () {
+  // Variables
+  const baseDeDatos = [
+      {
+          id: 1,
+          nombre: 'Jordan 1 Mid Shoe - Amarillo',
+          precio: 17999,
+          imagen: 'img/productos/Air Jordan 1 Mid Shoe-amarillo.jpg'
+      },
+      {
+          id: 2,
+          nombre: 'Jordan 1 Mid Shoe - Azul y Blanco',
+          precio: 17999,
+          imagen: 'img/productos/Air Jordan 1 Mid Shoe-azul y blanco.jpg'
+      },
+      {
+          id: 3,
+          nombre: 'Jordan 1 Mid Shoe - Azul',
+          precio: 17999,
+          imagen: 'img/productos/Air Jordan 1 Mid Shoe-azul.jpg'
+      },
+      {
+          id: 4,
+          nombre: 'Jordan 1 Mid Shoe - Celeste',
+          precio: 17999,
+          imagen: 'img/productos/Air Jordan 1 Mid Shoe-celeste.jpg'
+      },
+      {
+        id: 5,
+        nombre: 'Jordan 1 Mid Shoe - Multicolor',
+        precio: 17999,
+        imagen: 'img/productos/Air Jordan 1 Mid Shoe-Multicolor.jpg'
+    },
+    {
+        id: 6,
+        nombre: 'Jordan 1 Mid Shoe - Salmon',
+        precio: 21000,
+        imagen: 'img/productos/Air Jordan 1 Mid Shoe-salmon.jpg'
+    },
+    {
+        id: 7,
+        nombre: 'Jordan 1 Mid Shoe - Rojo',
+        precio: 21000,
+        imagen: 'img/productos/Air Jordan 1 Mid Shoe-rojo.jpg'
+    },
+    {
+        id: 8,
+        nombre: 'Jordan 1 Mid Shoe - Turquesa',
+        precio: 23000,
+        imagen: 'img/productos/Air Jordan 1 Mid Shoe-turquesa.jpg'
+    },
+    {
+      id: 9,
+      nombre: 'Jordan 1 Mid Shoe - Rojo y negro',
+      precio: 23000,
+      imagen: 'img/productos/Air Jordan 1 Mid Shoe-rojo y negro.jpg'
+  }
+  ];
 
-Clickbutton.forEach(btn => {
-  btn.addEventListener('click', addToCarritoItem)
-})
+  let carrito = [];
+  let total = 0;
+  const DOMitems = document.querySelector('#items');
+  const DOMcarrito = document.querySelector('#carrito');
+  const DOMtotal = document.querySelector('#total');
+  const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+  const miLocalStorage = window.localStorage;
 
+  // Funciones
 
-function addToCarritoItem(e){
-  const button = e.target
-  const item = button.closest('.card')
-  const itemTitle = item.querySelector('.card-title').textContent;
-  const itemPrice = item.querySelector('.precio').textContent;
-  const itemImg = item.querySelector('.card-img-top').src;
+ //Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
+  function renderizarProductos() {
+      baseDeDatos.forEach((info) => {
+          // Estructura
+          const miNodo = document.createElement('div');
+          miNodo.classList.add('card', 'col-sm-4');
+          // Body
+          const miNodoCardBody = document.createElement('div');
+          miNodoCardBody.classList.add('card-body');
+          // Titulo
+          const miNodoTitle = document.createElement('h5');
+          miNodoTitle.classList.add('card-title');
+          miNodoTitle.textContent = info.nombre;
+          // Imagen
+          const miNodoImagen = document.createElement('img');
+          miNodoImagen.classList.add('img-fluid');
+          miNodoImagen.setAttribute('src', info.imagen);
+          // Precio
+          const miNodoPrecio = document.createElement('p');
+          miNodoPrecio.classList.add('card-text');
+          miNodoPrecio.textContent =  '$'+ info.precio;
+          // Boton 
+          const miNodoBoton = document.createElement('button');
+          miNodoBoton.classList.add('btn', 'btn-primary');
+          miNodoBoton.textContent = 'Comprar';
+          miNodoBoton.setAttribute('marcador', info.id);
+          miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
+          // Insertamos
+          miNodoCardBody.appendChild(miNodoImagen);
+          miNodoCardBody.appendChild(miNodoTitle);
+          miNodoCardBody.appendChild(miNodoPrecio);
+          miNodoCardBody.appendChild(miNodoBoton);
+          miNodo.appendChild(miNodoCardBody);
+          DOMitems.appendChild(miNodo);
+      });
+  }
+
   
-  const newItem = {
-    title: itemTitle,
-    precio: itemPrice,
-    img: itemImg,
-    cantidad: 1
+  //Evento para añadir un producto al carrito de la compra
+  function anyadirProductoAlCarrito(evento) {
+      carrito.push(evento.target.getAttribute('marcador'))
+
+      calcularTotal(); 
+      renderizarCarrito();
+      guardarCarritoEnLocalStorage();
   }
 
-  addItemCarrito(newItem)
-}
+ // Dibuja todos los productos guardados en el carrito
+  function renderizarCarrito() {
+      DOMcarrito.textContent = '';
+      const carritoSinDuplicados = [...new Set(carrito)];
 
+      carritoSinDuplicados.forEach((item) => {
+          const miItem = baseDeDatos.filter((itemBaseDatos) => {
+              return itemBaseDatos.id === parseInt(item);
+          });
+          const numeroUnidadesItem = carrito.reduce((total, itemId) => {
+              return itemId === item ? total += 1 : total;
+          }, 0);
+          
+          const miNodo = document.createElement('li');
+          miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+          miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}$`;
+          const miBoton = document.createElement('button');
+          miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+          miBoton.textContent = 'X';
+          miBoton.style.marginLeft = '1rem';
+          miBoton.dataset.item = item;
 
-function addItemCarrito(newItem){
-
-  const alert = document.querySelector('.alert')
-
-  setTimeout( function(){
-    alert.classList.add('hide')
-  }, 2000)
-    alert.classList.remove('hide')
-
-  const InputElemnto = tbody.getElementsByClassName('input__elemento')
-  for(let i =0; i < carrito.length ; i++){
-    if(carrito[i].title.trim() === newItem.title.trim()){
-      carrito[i].cantidad ++;
-      const inputValue = InputElemnto[i]
-      inputValue.value++;
-      CarritoTotal()
-      return null;
-    }
+          miBoton.addEventListener('click', borrarItemCarrito);
+          miNodo.appendChild(miBoton);
+          DOMcarrito.appendChild(miNodo);
+      });
   }
+
   
-  carrito.push(newItem)
+  //Evento para borrar un elemento del carrito
+  function borrarItemCarrito(evento) {
+      const id = evento.target.dataset.item;
+      carrito = carrito.filter((carritoId) => {
+          return carritoId !== id;
+      });
+
+      renderizarCarrito();
+      calcularTotal();
+      guardarCarritoEnLocalStorage();
+
+  }
+
   
-  renderCarrito()
-} 
+  //Calcula el precio total teniendo en cuenta los productos repetidos
+  function calcularTotal() {
+      total = 0;
+      carrito.forEach((item) => {
+          const miItem = baseDeDatos.filter((itemBaseDatos) => {
+              return itemBaseDatos.id === parseInt(item);
+          });
+          total = total + miItem[0].precio;
+      });
+      
+      DOMtotal.textContent = total.toFixed(2);
+  }
 
+  
+  function vaciarCarrito() {
+      // Limpiamos los productos guardados
+      carrito = [];
+      renderizarCarrito();
+      calcularTotal();
+      // Borra LocalStorage
+      localStorage.clear();
 
-function renderCarrito(){
-  tbody.innerHTML = ''
-  carrito.map(item => {
-    const tr = document.createElement('tr')
-    tr.classList.add('ItemCarrito')
-    const Content = `
-    
-    <th scope="row">1</th>
-            <td class="table__productos">
-              <img src=${item.img}  alt="">
-              <h6 class="title">${item.title}</h6>
-            </td>
-            <td class="table__price"><p>${item.precio}</p></td>
-            <td class="table__cantidad">
-              <input type="number" min="1" value=${item.cantidad} class="input__elemento">
-              <button class="delete btn btn-danger">x</button>
-            </td>
-    
-    `
-    tr.innerHTML = Content;
-    tbody.append(tr)
+  }
 
-    tr.querySelector(".delete").addEventListener('click', removeItemCarrito)
-    tr.querySelector(".input__elemento").addEventListener('change', sumaCantidad)
-  })
-  CarritoTotal()
+  function guardarCarritoEnLocalStorage () {
+      miLocalStorage.setItem('carrito', JSON.stringify(carrito));
+  }
+
+  function cargarCarritoDeLocalStorage () {
+      if (miLocalStorage.getItem('carrito') !== null) {
+          // Carga la información
+          carrito = JSON.parse(miLocalStorage.getItem('carrito'));
+      }
+  }
+
+  // Eventos
+  DOMbotonVaciar.addEventListener('click', vaciarCarrito);
+
+  // Inicio
+  cargarCarritoDeLocalStorage();
+  renderizarProductos();
+  calcularTotal();
+  renderizarCarrito();
 }
 
-function CarritoTotal(){
-  let Total = 0;
-  const itemCartTotal = document.querySelector('.itemCartTotal')
-  carrito.forEach((item) => {
-    const precio = Number(item.precio.replace("$", ''))
-    Total = Total + precio*item.cantidad
-  })
-
-  itemCartTotal.innerHTML = `Total $${Total}`
-  addLocalStorage()
-}
-
-function removeItemCarrito(e){
-  const buttonDelete = e.target
-  const tr = buttonDelete.closest(".ItemCarrito")
-  const title = tr.querySelector('.title').textContent;
-  for(let i=0; i<carrito.length ; i++){
-
-    if(carrito[i].title.trim() === title.trim()){
-      carrito.splice(i, 1)
+//FORM DE CONSULTAS
+function validaForm(){
+    // Campos de texto
+    if($("#nombre").val() == ""){
+        swal("El campo Nombre no puede estar vacío.");
+        $("#nombre").focus();      
+        return false;
     }
-  }
-
-  const alert = document.querySelector('.remove')
-
-  setTimeout( function(){
-    alert.classList.add('remove')
-  }, 2000)
-    alert.classList.remove('remove')
-
-  tr.remove()
-  CarritoTotal()
-}
-
-function sumaCantidad(e){
-  const sumaInput  = e.target
-  const tr = sumaInput.closest(".ItemCarrito")
-  const title = tr.querySelector('.title').textContent;
-  carrito.forEach(item => {
-    if(item.title.trim() === title){
-      sumaInput.value < 1 ?  (sumaInput.value = 1) : sumaInput.value;
-      item.cantidad = sumaInput.value;
-      CarritoTotal()
+    if($("#direccion").val() == ""){
+        swal("El campo Dirección no puede estar vacío.");
+        $("#direccion").focus();
+        return false;
     }
-  })
+    if($("#consulta").val() == ""){
+        swal("El campo Consulta no puede estar vacío.");
+        $("#consulta").focus();
+        return false;
+    }
+   
+
+    // Checkbox
+    if(!$("#mayor").is(":checked")){
+        swal("Debe confirmar que es mayor de 18 años.");
+        return false;
+    }
+
+    return true; 
 }
-
-function addLocalStorage(){
-  localStorage.setItem('carrito', JSON.stringify(carrito))
-}
-
-window.onload = function(){
-  const storage = JSON.parse(localStorage.getItem('carrito'));
-  if(storage){
-    carrito = storage;
-    renderCarrito()
-  }
-}
-
-
-const menu = document.querySelector(".menu");
-const navOpen = document.querySelector(".hamburger");
-const navClose = document.querySelector(".close");
-
-const navLeft = menu.getBoundingClientRect().left;
-navOpen.addEventListener("click", () => {
-  if (navLeft < 0) {
-    menu.classList.add("show");
-    document.body.classList.add("show");
-    navBar.classList.add("show");
-  }
+$(document).ready( function() {   
+    $("#botonenviar").click( function() {     
+        if(validaForm()){                           
+            $.post("enviar.php",$("#formdata").serialize(),function(res){
+                $("#formulario").fadeOut("slow");   
+                if(res == 1){
+                    $("#exito").delay(500).fadeIn("slow");      
+                } else {
+                    $("#fracaso").delay(500).fadeIn("slow");    
+                }
+            });
+        }
+    });    
 });
 
-navClose.addEventListener("click", () => {
-  if (navLeft < 0) {
-    menu.classList.remove("show");
-    document.body.classList.remove("show");
-    navBar.classList.remove("show");
-  }
-});
-
-// Fixed Nav
+//Animaciones
+// Fix Nav
 const navBar = document.querySelector(".nav");
 const navHeight = navBar.getBoundingClientRect().height;
 window.addEventListener("scroll", () => {
@@ -172,7 +258,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Scroll To
+// Scroll 
 const links = [...document.querySelectorAll(".scroll-link")];
 links.map(link => {
   if (!link) return;
@@ -202,3 +288,4 @@ gsap.from(".hero-img", { opacity: 0, duration: 1, delay: 1.5, x: -200 });
 gsap.from(".hero-content h2", { opacity: 0, duration: 1, delay: 2, y: -50 });
 gsap.from(".hero-content h1", { opacity: 0, duration: 1, delay: 2.5, y: -45 });
 gsap.from(".hero-content a", { opacity: 0, duration: 1, delay: 3.5, y: 50 });
+
