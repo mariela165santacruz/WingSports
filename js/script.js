@@ -202,6 +202,7 @@ window.onload = function () {
   renderizarCarrito();
 }
 
+
 //FORM DE CONSULTAS
 function validaForm(){
     // Campos de texto
@@ -220,8 +221,6 @@ function validaForm(){
         $("#consulta").focus();
         return false;
     }
-   
-
     // Checkbox
     if(!$("#mayor").is(":checked")){
         swal("Debe confirmar que es mayor de 18 años.");
@@ -244,6 +243,7 @@ $(document).ready( function() {
         }
     });    
 });
+
 
 //Animaciones
 // Fix Nav
